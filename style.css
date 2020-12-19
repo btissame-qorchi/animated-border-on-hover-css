@@ -1,0 +1,66 @@
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+.box {
+  width: 300px;
+  height: 300px;
+  box-shadow: inset 0 0 0 1px #f7e8d7;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  margin: auto;
+  right: 0;
+  left: 0;
+}
+.box .inner {
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  padding: 0 40px;
+}
+
+.box .inner h6 {
+  padding-bottom: 10px;
+  font-weight: 700;
+  font-size: 22px;
+}
+.box .inner p {
+  font-size: 14px;
+  line-height: 22px;
+}
+.box::before,
+.box::after {
+  box-sizing: inherit;
+  content: "";
+  position: absolute;
+  border: 1px solid transparent;
+  width: 0;
+  height: 0;
+}
+.box::after {
+  bottom: 0;
+  right: 0;
+}
+.box::before {
+  top: 0;
+  left: 0;
+}
+.box:hover::before,
+.box:hover::after {
+  width: 100%;
+  height: 100%;
+}
+.box:hover::before {
+  border-top-color: #b3660e;
+  border-right-color: #b3660e;
+  transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.box:hover::after {
+  border-bottom-color: #b3660e;
+  border-left-color: #b3660e;
+  transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s,
+    height 0.25s ease-out 0.75s;
+}
